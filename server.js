@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/public'));
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
-  twiml.say({ voice: 'alice' }, 'Hello there. This message is awaiting customization. And now, some Cowbell.');
+  twiml.say({ voice: 'alice' }, 'Hello from James. This message is awaiting customization');
   twiml.play('https://agile-sands-23686.herokuapp.com/boom2.mp3');
   response.type('text/xml');
   response.send(twiml.toString());
@@ -18,8 +18,7 @@ app.post('/voice', (request, response) => {
 app.post('/outgoing', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
-  twiml.say({ voice: 'alice' }, 'Hello Kevin. What makes you think you can take this entire classroom for yourself? I am watching you.');
-  twiml.play('https://agile-sands-23686.herokuapp.com/boom2.mp3');
+  twiml.say({ voice: 'alice' }, 'Hello John. This is Henry the cat. I have always loved your friend Dan more than you. I miss him, but I do not miss you. Chi Chi says she also feels the same, by the way.');
   response.type('text/xml');
   response.send(twiml.toString());
 });
