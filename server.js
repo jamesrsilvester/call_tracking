@@ -4,7 +4,9 @@ const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-
+app.get('/', function(request, response) {
+  response.render('index.html');
+});
 
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
