@@ -1,5 +1,7 @@
 const express = require('express');
-const VoiceResponse = require('twilio').twiml.VoiceResponse;
+const VoiceResponse =require('twilio').twiml.VoiceResponse;
+
+app.set('port', (process.env.PORT || 5000));
 
 const app = express();
 
@@ -12,4 +14,8 @@ app.post('/voice', (request, response) => {
   response.send(twiml.toString());
 });
 
-app.listen(1337);
+// app.listen(1337);
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
