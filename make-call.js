@@ -8,7 +8,7 @@ let authToken = 'dcecb26cf29d32892b7baa9957657253'
 let client = require('twilio')(accountSid, authToken);
 
 client.calls.create({
-  url: 'https://agile-sands-23686.herokuapp.com/outgoing.xml',
+  url: 'https://agile-sands-23686.herokuapp.com/outgoing',
   to: '+19175965245',
   from: '+16282276015'
 }, function(err, call) {
