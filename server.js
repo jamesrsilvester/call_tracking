@@ -1,9 +1,10 @@
 const express = require('express');
 const VoiceResponse =require('twilio').twiml.VoiceResponse;
+const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-const app = express();
+
 
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
