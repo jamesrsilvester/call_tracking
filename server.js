@@ -10,7 +10,6 @@ app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
   twiml.say({ voice: 'alice' }, 'Hello from James. This message is awaiting customization');
-  twiml.play('https://agile-sands-23686.herokuapp.com/boom2.mp3');
   response.type('text/xml');
   response.send(twiml.toString());
 });
