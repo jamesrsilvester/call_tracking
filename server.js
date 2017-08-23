@@ -10,9 +10,7 @@ app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
   twiml.say({ voice: 'alice' }, 'You have reached Heroku!');
-  twiml.play('
-https://drive.google.com/file/d/0BzDjJwd_OUs8dFZqVHpHVzctdFk/view?usp=sharing
-');
+  twiml.play('https://api.twilio.com/Cowbell.mp3');
   response.type('text/xml');
   response.send(twiml.toString());
 });
