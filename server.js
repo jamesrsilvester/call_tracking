@@ -17,7 +17,7 @@ app.post('/voice', (request, response) => {
 app.post('/outgoing', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
-  twiml.say({ voice: 'alice' }, 'Hello John. This is Henry the cat. I have always loved your friend Dan more than you. I miss him not you. Chi Chi says she also feels the same by the way.');
+  twiml.say({ voice: 'alice' }, 'Hello John. This is Henry the cat. I have always loved your friend Dan more than you. I miss him but not you. Chi Chi says she also feels the same by the way.');
   response.type('text/xml');
   response.send(twiml.toString());
 });
