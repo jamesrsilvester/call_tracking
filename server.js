@@ -4,7 +4,13 @@ const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/public'));
+
+// // At the top of your web.js
+// process.env.PWD = process.cwd()
+//
+// // Then
+// app.use(express.static(process.env.PWD + 'public'));
 
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
