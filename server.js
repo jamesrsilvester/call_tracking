@@ -4,14 +4,12 @@ const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(request, response) {
-  response.render('./index.html');
-});
+
 
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
-  twiml.say({ voice: 'alice' }, 'You have reached Heroku!');
+  twiml.say({ voice: 'alice' }, 'Hello there. This message is awaiting customization. And now, some Cowbell.');
   twiml.play('https://api.twilio.com/Cowbell.mp3');
   response.type('text/xml');
   response.send(twiml.toString());
