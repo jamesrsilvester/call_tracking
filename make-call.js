@@ -1,5 +1,5 @@
-let accountSid = 'ACda3d94655478152b57159dada50559fd'
-let authToken = 'dcecb26cf29d32892b7baa9957657253'
+let accountSid = 'AC11f13cd97c534b4f12cdcf4960c89b70'
+let authToken = '2d755bae3c32cd76434d2f3ffb2f17e0'
 
 // from video:
 // let accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -9,8 +9,8 @@ let client = require('twilio')(accountSid, authToken);
 
 client.calls.create({
   url: 'https://agile-sands-23686.herokuapp.com/outgoing',
-  to: '+19175965245',
-  from: '+16282276015'
+  to: '+18189289221',
+  from: '+14158554158 '
 }, function(err, call) {
   if(err) {
     console.log(err, "call attempt failed");
