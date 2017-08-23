@@ -4,18 +4,16 @@ const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-
+app.use(express.static('media'));
 
 app.post('/voice', (request, response) => {
   const twiml = new VoiceResponse();
   // twiml.say('hello. Say something different next time
   twiml.say({ voice: 'alice' }, 'Hello there. This message is awaiting customization. And now, some Cowbell.');
-  twiml.play('https://api.twilio.com/Cowbell.mp3');
+  twiml.play('https://agile-sands-23686.herokuapp.com/media/boom2.mp3');
   response.type('text/xml');
   response.send(twiml.toString());
 });
-
-// app.listen(1337);
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
